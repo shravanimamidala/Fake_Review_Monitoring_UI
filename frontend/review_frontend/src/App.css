@@ -1,0 +1,217 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+.App {
+  width: 90%;
+}
+
+.form-container {
+  margin : auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 400px;
+}
+
+.dashboard-container {
+  margin : auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 800px;
+}
+
+.form-container h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  background-color: teal;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  margin: 20px 0 10px;
+}
+
+.form-container img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.login-image {
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.register-image {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: #0056b3;
+}
+
+.form-container p {
+  margin: 10px 0 0;
+}
+
+.form-container span {
+  color: #007BFF;
+  cursor: pointer;
+}
+
+.form-container span:hover {
+  text-decoration: underline;
+}
+
+.success-message {
+  font-size: 20px;
+  color: green;
+  margin-top: 10px;
+}
+
+.dashboard-header { 
+  background-color: #0882bb; /* Set background color to baby blue */ 
+  color: white; 
+  padding: 20px; 
+  border-radius: 5px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for header effect */ 
+  position: sticky; /* Make the header stick at the top */ 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.dashboard-header h1 {
+  margin: 0;
+}
+
+.profile-button {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.profile-button:hover {
+  text-decoration: underline;
+}
+
+.dashboard-content {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px dashed #007BFF;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.upload-box input {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.upload-box button {
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-box button:hover {
+  background: #0056b3;
+}
+
+.profile-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cfc734b1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-items: right;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.profile-modal .profile-content {
+  text-align: left;
+}
+
+.profile-modal h2 {
+  margin-top: 0;
+}
+
+.profile-modal button {
+  margin-top: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-modal button:hover {
+  background: #0056b3;
+}
+
+.profile-modal button + button {
+  margin-left: 10px;
+}
