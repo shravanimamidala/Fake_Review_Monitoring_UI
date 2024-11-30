@@ -1,8 +1,12 @@
-// src/components/Dashboard.js
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard({ welcomeMessage, setLoggedIn }) {
   const [showProfile, setShowProfile] = useState(false);
+  const [file, setFile] = useState(null);
+  const [uploadMessage, setUploadMessage] = useState('');
+  const navigate = useNavigate();
   const username = localStorage.getItem('username');
   const email = localStorage.getItem('email');
 
@@ -11,23 +15,57 @@ function Dashboard({ welcomeMessage, setLoggedIn }) {
   };
 
   const handleReset = () => {
-    // Reset functionality goes here if needed
+    setFile(null);
+    setUploadMessage('');
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async () => {
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await axios.post('https://curly-doodle-r75664pjpqx39j4-5000.app.github.dev/upload', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        setUploadMessage(response.data.message);
+      } catch (error) {
+        setUploadMessage(`Error uploading file: ${error.message}`);
+      }
+    } else {
+      setUploadMessage('Please select a file to upload');
+    }
+  };
+
+  const handleShowAnalysis = () => {
+    // Redirect to analysis page
+    navigate('/analysis');
   };
 
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h2>REVIEW MONITORING SYSTEM</h2>
+        <h1>REVIEW MONITORING SYSTEM</h1>
         <button className="profile-button" onClick={() => setShowProfile(!showProfile)}>Profile</button>
       </header>
       <main className="dashboard-content">
         <p>{welcomeMessage}, Please upload a CSV file to continue.</p>
         <div className="upload-box">
-          <input type="file" accept=".csv" />
+          <input type="file" accept=".csv" onChange={handleFileChange} />
           <div className="button-container">
-            <button>Submit</button>
+            <button onClick={handleSubmit}>Submit</button>
             <button onClick={handleReset}>Reset</button>
           </div>
+          {uploadMessage && <p>{uploadMessage}</p>}
+          {uploadMessage === "File uploaded successfully" && (
+            <button onClick={handleShowAnalysis}>Show Analysis</button>
+          )}
         </div>
       </main>
       {showProfile && (
