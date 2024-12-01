@@ -21,10 +21,18 @@ function Dashboard({ welcomeMessage, setLoggedIn }) {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
+    setUploadMessage(''); // Clear any previous message when a new file is selected
   };
 
   const handleSubmit = async () => {
     if (file) {
+      // Validate file type
+      const validTypes = ['text/csv', 'application/vnd.ms-excel'];
+      if (!validTypes.includes(file.type)) {
+        setUploadMessage('Invalid input. Please upload a CSV file.');
+        return;
+      }
+
       const formData = new FormData();
       formData.append('file', file);
 

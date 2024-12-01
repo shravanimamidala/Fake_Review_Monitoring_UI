@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import SelectionPage from './components/SelectionPage';
+import ReviewRegister from './components/ReviewRegister';
+import ReviewLogin from './components/ReviewLogin';
+import ReviewCreation from './components/ReviewCreation';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
@@ -10,11 +14,22 @@ function App() {
   const [showLogin, setShowLogin] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
   const [welcomeMessage, setWelcomeMessage] = useState('');
+  const [showReviewLogin, setShowReviewLogin] = useState(true);
 
   return (
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<SelectionPage />} />
+          <Route path="/review-register" element={<ReviewRegister setShowRegister={setShowReviewLogin} />} />
+          <Route path="/review-login" element={
+            showReviewLogin ? (
+              <ReviewLogin setShowRegister={setShowReviewLogin} />
+            ) : (
+              <ReviewRegister setShowRegister={setShowReviewLogin} />
+            )
+          } />
+          <Route path="/review-creation" element={<ReviewCreation />} />
           <Route path="/login" element={
             !loggedIn ? (
               showLogin ? (
@@ -35,7 +50,6 @@ function App() {
             )
           } />
           <Route path="/analysis" element={<Analysis />} />
-          <Route path="/" element={<Navigate to={loggedIn ? "/dashboard" : showLogin ? "/login" : "/register"} />} />
         </Routes>
       </div>
     </Router>

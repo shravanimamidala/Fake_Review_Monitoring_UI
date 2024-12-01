@@ -1,0 +1,62 @@
+.analysis-container { text-align: center; 
+  margin: 50px auto; /* Center the container */ 
+  width: 70%; /* Set the container width to 80% of the viewport */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Display three images per row */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Define custom sizes for each image */
+.image-size1 img {
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.image-size2 img {
+  width: 150px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.image-size3 img {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.image-size4 img {
+  width: 250px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.image-size5 img {
+  width: 300px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.image-size6 img {
+  width: 350px; /* Adjust the size as needed */
+  height: auto;
+}
+
+button {
+  background-color: rgb(18, 162, 210);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: deepskyblue;
+}

@@ -1,3 +1,6 @@
 Flask
 pandas
 flask_cors
+nltk
+random
+TextBlob
