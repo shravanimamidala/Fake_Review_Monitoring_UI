@@ -13,14 +13,16 @@ In our project We addressed the following use cases :
 
 2.User interact with user for writing a review
 
-3.If user tries to login with invalid credentials,Gets a prompt message
+3.Admin gets an alert when user makes an analogous review
 
-4.When Bot/Blocked user tries to login and create a review,gets a blocked message
+4.If user tries to login with invalid credentials,Gets a prompt message
 
-5.Admin interact with UI to make an Analysis
+5.When Bot/Blocked user tries to login and create a review,gets a blocked message
 
-6.If admin tries to login with invalid credentials,Gets a prompt message
+6.Admin interact with UI to make an Analysis
 
-7.Invalid file input other than .csv,Gets an error message
+7.If admin tries to login with invalid credentials,Gets a prompt message.
 
-8.Admin gets an alert when user makes an analogous review
+8.Invalid file input other than .csv,Gets an error message
+
+
