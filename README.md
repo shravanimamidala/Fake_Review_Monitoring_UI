@@ -8,11 +8,19 @@ and monitor these fake reviews
 
 This is an extension to the project of https://github.com/anubhavs11/Fake-Product-Review-Monitoring  which included the intraction with UI.
 In our project We addressed the following use cases :
+
 1.Registering the new user or admin
+
 2.User interact with user for writing a review
+
 3.If user tries to login with invalid credentials,Gets a prompt message
+
 4.When Bot/Blocked user tries to login and create a review,gets a blocked message
+
 5.Admin interact with UI to make an Analysis
+
 6.If admin tries to login with invalid credentials,Gets a prompt message
+
 7.Invalid file input other than .csv,Gets an error message
+
 8.Admin gets an alert when user makes an analogous review
