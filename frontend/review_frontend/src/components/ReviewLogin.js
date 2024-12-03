@@ -9,7 +9,7 @@ function ReviewLogin() {
   const navigate = useNavigate();
 
   // List of blocked usernames
-  const blockedUsers = ['User23', 'Bot23', 'User123'];
+  const blockedUsers = ['User23', 'Bot23', 'User123','test123'];
 
   const handleLogin = () => {
     // Check if the username is in the list of blocked users
