@@ -16,7 +16,7 @@ nltk.download('punkt_tab')
 nltk.download('averaged_perceptron_tagger_eng')
 from textblob import TextBlob
 
-df = pd.read_csv("/workspaces/Project_Version2/backend/uploads/test.csv",sep="\t")
+df = pd.read_csv("/workspaces/Project_Version2/backend/uploads/reviews.csv",sep="\t")
 
 def Preprocessing(text):
     text = str(text)
@@ -351,3 +351,5 @@ def meaningless_reviews(df):
 	
 	df.loc[df['review_id'].isin(remove_reviews), 'Fake_label'] = "Yes"
 	return df
+
+pipeline=[Preprocessing,Sentimental_Analysis,SameUser_DiffProduct_SameBrand,Check_SameIp_SameDay,RudeReviews,LatentSemanticAnalysis,meaningless_reviews ]
